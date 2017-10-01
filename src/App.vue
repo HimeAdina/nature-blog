@@ -9,3 +9,7 @@
     name: 'app'
   }
 </script>
+
+<style lang="scss" scoped>
+    @import "scss/bootstrap";
+</style>

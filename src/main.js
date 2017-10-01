@@ -1,13 +1,19 @@
+import BootstrapVue from 'bootstrap-vue';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
+import 'bootstrap/dist/css/bootstrap.css';
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
-import router from './router'
+import Vue from 'vue';
+import VueQuillEditor from 'vue-quill-editor';
 
-import BootstrapVue from 'bootstrap-vue'
+import VueFire from 'vuefire';
+// import external stylesheets
+import App from './App.vue';
+import router from './js/router';
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+Vue.use(VueFire);  // activate vuefire plugin
+Vue.use(VueQuillEditor);  // activate vue-quill-editor
 
 Vue.use(BootstrapVue);
 

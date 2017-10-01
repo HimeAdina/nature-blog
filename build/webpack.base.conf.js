@@ -1,7 +1,7 @@
-var path = require('path')
-var utils = require('./utils')
-var config = require('../config')
-var vueLoaderConfig = require('./vue-loader.conf')
+let path = require('path');
+let utils = require('./utils');
+let config = require('../config');
+let vueLoaderConfig = require('./vue-loader.conf');
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -19,7 +19,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.scss'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
@@ -36,6 +36,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.scss$/,
+        loader: ['style', 'css', 'sass'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -63,4 +67,4 @@ module.exports = {
       }
     ]
   }
-}
+};
